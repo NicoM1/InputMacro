@@ -1,7 +1,9 @@
 package io;
 
+import haxe.Json;
 import io.InputMacro.Action;
 import snow.input.Keycodes;
+import sys.io.File;
 
 @:build(io.InputMacro.buildInput())
 class InputManager {}
@@ -50,7 +52,14 @@ class InputAction {
 }
 
 class InputRemapper {
-	static public function reMap(actions: Array<Action>) {
+	static public function reMap() {
+		var actions: Array<Action>;
+		try {
+			actions = cast Json.parse(File.getContent("input.json")).actions;
+		}
+		catch (e: Dynamic) {
+			throw "input.json is invalid";
+		}
 		for (a in actions) {
 			var field: InputAction = Reflect.field(InputManager, a.name);
 			if (field != null) {
