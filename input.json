@@ -1,0 +1,24 @@
+{
+	"actions": [
+		{
+			"name": "playerleft",
+			"codes": ["key_a", "left"]
+		},
+		{
+			"name": "playerright",
+			"codes": ["key_d", "right"]
+		},
+		{
+			"name": "playerup",
+			"codes": ["key_w", "up"]
+		},
+		{
+			"name": "playerdown",
+			"codes": ["key_s", "down"]
+		},
+		{
+			"name": "playerjump",
+			"codes": ["space"]
+		}
+	]
+}
