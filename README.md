@@ -37,4 +37,4 @@
 - type `InputManager.*`, all your actions will show up as members, each having `pressed()`, `released()`, and `down()` functions for checking state
 
 
-- if you wish to allow the player to remap keys (will not work by default), add `InputRemapper.reMap();` somewhere in your startup functions, this will cause any actions that are changed in the JSON file to be overridden at runtime
+- if you wish to allow the player to remap keys (will not work by default), add `InputRemapper.reMap();` somewhere in your startup functions, this will cause any actions that are changed in the JSON file to be overridden at runtime. currently this will throw an error on web targets, as the sys package is unavailable, just add an `#if !web` before calling

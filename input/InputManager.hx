@@ -3,7 +3,9 @@ package io;
 import haxe.Json;
 import io.InputMacro.Action;
 import snow.input.Keycodes;
+#if macro
 import sys.io.File;
+#end
 
 @:build(io.InputMacro.buildInput())
 class InputManager {}
@@ -53,6 +55,7 @@ class InputAction {
 
 class InputRemapper {
 	static public function reMap() {
+		#if !web
 		var actions: Array<Action>;
 		try {
 			actions = cast Json.parse(File.getContent("input.json")).actions;
@@ -69,5 +72,8 @@ class InputRemapper {
 				throw "input.json contains invalid action: " + a.name;
 			}
 		}
+		#else
+		throw "input remapping currently unavailable on web targets";
+		#end
 	}
 }

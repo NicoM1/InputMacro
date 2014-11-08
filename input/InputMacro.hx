@@ -3,7 +3,9 @@ package io;
 import haxe.macro.Context;
 import haxe.macro.Expr;
 import haxe.Json;
+#if macro
 import sys.io.File;
+#end
 
 class InputMacro {
 	/**
