@@ -4,7 +4,7 @@
 
 **Dependencies**: requires Luxe for input handling and codes, but can be easily changed for other frameworks
 
-######Usage: 
+**Usage:**
 - add an `input.json` file to your project:
 
 ```
