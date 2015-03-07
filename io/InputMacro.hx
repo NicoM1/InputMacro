@@ -22,10 +22,10 @@ class InputMacro {
 		
 		var input: Array<Action>;
 		try {
-			input = cast Json.parse(File.getContent("input.json")).actions;
+			input = cast Json.parse(File.getContent("assets/input.json")).actions;
 		}
 		catch (e: Dynamic) {
-			throw "input.json is invalid";
+			throw "input.json is invalid: " + e;
 		}
 		
 		for (i in input) {
