@@ -2,7 +2,7 @@ package io;
 
 import haxe.Json;
 import io.InputMacro.Action;
-import snow.input.Keycodes;
+import snow.system.input.Keycodes;
 import sys.io.File;
 
 @:build(io.InputMacro.buildInput())
